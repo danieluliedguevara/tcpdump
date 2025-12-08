@@ -1,0 +1,922 @@
+[
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/addrtoname.c.o -c /home/danielulied/tcpdump/addrtoname.c",
+  "file": "/home/danielulied/tcpdump/addrtoname.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/addrtostr.c.o -c /home/danielulied/tcpdump/addrtostr.c",
+  "file": "/home/danielulied/tcpdump/addrtostr.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/af.c.o -c /home/danielulied/tcpdump/af.c",
+  "file": "/home/danielulied/tcpdump/af.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/ascii_strcasecmp.c.o -c /home/danielulied/tcpdump/ascii_strcasecmp.c",
+  "file": "/home/danielulied/tcpdump/ascii_strcasecmp.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/checksum.c.o -c /home/danielulied/tcpdump/checksum.c",
+  "file": "/home/danielulied/tcpdump/checksum.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/cpack.c.o -c /home/danielulied/tcpdump/cpack.c",
+  "file": "/home/danielulied/tcpdump/cpack.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/gmpls.c.o -c /home/danielulied/tcpdump/gmpls.c",
+  "file": "/home/danielulied/tcpdump/gmpls.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/in_cksum.c.o -c /home/danielulied/tcpdump/in_cksum.c",
+  "file": "/home/danielulied/tcpdump/in_cksum.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/ipproto.c.o -c /home/danielulied/tcpdump/ipproto.c",
+  "file": "/home/danielulied/tcpdump/ipproto.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/l2vpn.c.o -c /home/danielulied/tcpdump/l2vpn.c",
+  "file": "/home/danielulied/tcpdump/l2vpn.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/netdissect.c.o -c /home/danielulied/tcpdump/netdissect.c",
+  "file": "/home/danielulied/tcpdump/netdissect.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/netdissect-alloc.c.o -c /home/danielulied/tcpdump/netdissect-alloc.c",
+  "file": "/home/danielulied/tcpdump/netdissect-alloc.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/nlpid.c.o -c /home/danielulied/tcpdump/nlpid.c",
+  "file": "/home/danielulied/tcpdump/nlpid.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/ntp.c.o -c /home/danielulied/tcpdump/ntp.c",
+  "file": "/home/danielulied/tcpdump/ntp.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/oui.c.o -c /home/danielulied/tcpdump/oui.c",
+  "file": "/home/danielulied/tcpdump/oui.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/parsenfsfh.c.o -c /home/danielulied/tcpdump/parsenfsfh.c",
+  "file": "/home/danielulied/tcpdump/parsenfsfh.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print.c.o -c /home/danielulied/tcpdump/print.c",
+  "file": "/home/danielulied/tcpdump/print.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-802_11.c.o -c /home/danielulied/tcpdump/print-802_11.c",
+  "file": "/home/danielulied/tcpdump/print-802_11.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-802_15_4.c.o -c /home/danielulied/tcpdump/print-802_15_4.c",
+  "file": "/home/danielulied/tcpdump/print-802_15_4.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-ah.c.o -c /home/danielulied/tcpdump/print-ah.c",
+  "file": "/home/danielulied/tcpdump/print-ah.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-ahcp.c.o -c /home/danielulied/tcpdump/print-ahcp.c",
+  "file": "/home/danielulied/tcpdump/print-ahcp.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-aodv.c.o -c /home/danielulied/tcpdump/print-aodv.c",
+  "file": "/home/danielulied/tcpdump/print-aodv.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-aoe.c.o -c /home/danielulied/tcpdump/print-aoe.c",
+  "file": "/home/danielulied/tcpdump/print-aoe.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-ap1394.c.o -c /home/danielulied/tcpdump/print-ap1394.c",
+  "file": "/home/danielulied/tcpdump/print-ap1394.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-arcnet.c.o -c /home/danielulied/tcpdump/print-arcnet.c",
+  "file": "/home/danielulied/tcpdump/print-arcnet.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-arista.c.o -c /home/danielulied/tcpdump/print-arista.c",
+  "file": "/home/danielulied/tcpdump/print-arista.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-arp.c.o -c /home/danielulied/tcpdump/print-arp.c",
+  "file": "/home/danielulied/tcpdump/print-arp.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-ascii.c.o -c /home/danielulied/tcpdump/print-ascii.c",
+  "file": "/home/danielulied/tcpdump/print-ascii.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-atalk.c.o -c /home/danielulied/tcpdump/print-atalk.c",
+  "file": "/home/danielulied/tcpdump/print-atalk.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-atm.c.o -c /home/danielulied/tcpdump/print-atm.c",
+  "file": "/home/danielulied/tcpdump/print-atm.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-babel.c.o -c /home/danielulied/tcpdump/print-babel.c",
+  "file": "/home/danielulied/tcpdump/print-babel.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-bcm-li.c.o -c /home/danielulied/tcpdump/print-bcm-li.c",
+  "file": "/home/danielulied/tcpdump/print-bcm-li.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-beep.c.o -c /home/danielulied/tcpdump/print-beep.c",
+  "file": "/home/danielulied/tcpdump/print-beep.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-bfd.c.o -c /home/danielulied/tcpdump/print-bfd.c",
+  "file": "/home/danielulied/tcpdump/print-bfd.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-bgp.c.o -c /home/danielulied/tcpdump/print-bgp.c",
+  "file": "/home/danielulied/tcpdump/print-bgp.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-bootp.c.o -c /home/danielulied/tcpdump/print-bootp.c",
+  "file": "/home/danielulied/tcpdump/print-bootp.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-brcmtag.c.o -c /home/danielulied/tcpdump/print-brcmtag.c",
+  "file": "/home/danielulied/tcpdump/print-brcmtag.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-bt.c.o -c /home/danielulied/tcpdump/print-bt.c",
+  "file": "/home/danielulied/tcpdump/print-bt.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-calm-fast.c.o -c /home/danielulied/tcpdump/print-calm-fast.c",
+  "file": "/home/danielulied/tcpdump/print-calm-fast.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-carp.c.o -c /home/danielulied/tcpdump/print-carp.c",
+  "file": "/home/danielulied/tcpdump/print-carp.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-cdp.c.o -c /home/danielulied/tcpdump/print-cdp.c",
+  "file": "/home/danielulied/tcpdump/print-cdp.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-cfm.c.o -c /home/danielulied/tcpdump/print-cfm.c",
+  "file": "/home/danielulied/tcpdump/print-cfm.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-chdlc.c.o -c /home/danielulied/tcpdump/print-chdlc.c",
+  "file": "/home/danielulied/tcpdump/print-chdlc.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-cip.c.o -c /home/danielulied/tcpdump/print-cip.c",
+  "file": "/home/danielulied/tcpdump/print-cip.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-cnfp.c.o -c /home/danielulied/tcpdump/print-cnfp.c",
+  "file": "/home/danielulied/tcpdump/print-cnfp.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-dccp.c.o -c /home/danielulied/tcpdump/print-dccp.c",
+  "file": "/home/danielulied/tcpdump/print-dccp.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-decnet.c.o -c /home/danielulied/tcpdump/print-decnet.c",
+  "file": "/home/danielulied/tcpdump/print-decnet.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-dhcp6.c.o -c /home/danielulied/tcpdump/print-dhcp6.c",
+  "file": "/home/danielulied/tcpdump/print-dhcp6.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-domain.c.o -c /home/danielulied/tcpdump/print-domain.c",
+  "file": "/home/danielulied/tcpdump/print-domain.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-dsa.c.o -c /home/danielulied/tcpdump/print-dsa.c",
+  "file": "/home/danielulied/tcpdump/print-dsa.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-dtp.c.o -c /home/danielulied/tcpdump/print-dtp.c",
+  "file": "/home/danielulied/tcpdump/print-dtp.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-dvmrp.c.o -c /home/danielulied/tcpdump/print-dvmrp.c",
+  "file": "/home/danielulied/tcpdump/print-dvmrp.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-eap.c.o -c /home/danielulied/tcpdump/print-eap.c",
+  "file": "/home/danielulied/tcpdump/print-eap.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-egp.c.o -c /home/danielulied/tcpdump/print-egp.c",
+  "file": "/home/danielulied/tcpdump/print-egp.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-eigrp.c.o -c /home/danielulied/tcpdump/print-eigrp.c",
+  "file": "/home/danielulied/tcpdump/print-eigrp.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-enc.c.o -c /home/danielulied/tcpdump/print-enc.c",
+  "file": "/home/danielulied/tcpdump/print-enc.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-erspan.c.o -c /home/danielulied/tcpdump/print-erspan.c",
+  "file": "/home/danielulied/tcpdump/print-erspan.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-esp.c.o -c /home/danielulied/tcpdump/print-esp.c",
+  "file": "/home/danielulied/tcpdump/print-esp.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-ether.c.o -c /home/danielulied/tcpdump/print-ether.c",
+  "file": "/home/danielulied/tcpdump/print-ether.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-fddi.c.o -c /home/danielulied/tcpdump/print-fddi.c",
+  "file": "/home/danielulied/tcpdump/print-fddi.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-forces.c.o -c /home/danielulied/tcpdump/print-forces.c",
+  "file": "/home/danielulied/tcpdump/print-forces.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-fr.c.o -c /home/danielulied/tcpdump/print-fr.c",
+  "file": "/home/danielulied/tcpdump/print-fr.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-frag6.c.o -c /home/danielulied/tcpdump/print-frag6.c",
+  "file": "/home/danielulied/tcpdump/print-frag6.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-ftp.c.o -c /home/danielulied/tcpdump/print-ftp.c",
+  "file": "/home/danielulied/tcpdump/print-ftp.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-geneve.c.o -c /home/danielulied/tcpdump/print-geneve.c",
+  "file": "/home/danielulied/tcpdump/print-geneve.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-geonet.c.o -c /home/danielulied/tcpdump/print-geonet.c",
+  "file": "/home/danielulied/tcpdump/print-geonet.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-gre.c.o -c /home/danielulied/tcpdump/print-gre.c",
+  "file": "/home/danielulied/tcpdump/print-gre.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-hncp.c.o -c /home/danielulied/tcpdump/print-hncp.c",
+  "file": "/home/danielulied/tcpdump/print-hncp.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-hsrp.c.o -c /home/danielulied/tcpdump/print-hsrp.c",
+  "file": "/home/danielulied/tcpdump/print-hsrp.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-http.c.o -c /home/danielulied/tcpdump/print-http.c",
+  "file": "/home/danielulied/tcpdump/print-http.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-icmp.c.o -c /home/danielulied/tcpdump/print-icmp.c",
+  "file": "/home/danielulied/tcpdump/print-icmp.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-icmp6.c.o -c /home/danielulied/tcpdump/print-icmp6.c",
+  "file": "/home/danielulied/tcpdump/print-icmp6.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-igmp.c.o -c /home/danielulied/tcpdump/print-igmp.c",
+  "file": "/home/danielulied/tcpdump/print-igmp.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-igrp.c.o -c /home/danielulied/tcpdump/print-igrp.c",
+  "file": "/home/danielulied/tcpdump/print-igrp.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-ip-demux.c.o -c /home/danielulied/tcpdump/print-ip-demux.c",
+  "file": "/home/danielulied/tcpdump/print-ip-demux.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-ip.c.o -c /home/danielulied/tcpdump/print-ip.c",
+  "file": "/home/danielulied/tcpdump/print-ip.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-ip6.c.o -c /home/danielulied/tcpdump/print-ip6.c",
+  "file": "/home/danielulied/tcpdump/print-ip6.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-ip6opts.c.o -c /home/danielulied/tcpdump/print-ip6opts.c",
+  "file": "/home/danielulied/tcpdump/print-ip6opts.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-ipcomp.c.o -c /home/danielulied/tcpdump/print-ipcomp.c",
+  "file": "/home/danielulied/tcpdump/print-ipcomp.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-ipfc.c.o -c /home/danielulied/tcpdump/print-ipfc.c",
+  "file": "/home/danielulied/tcpdump/print-ipfc.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-ipnet.c.o -c /home/danielulied/tcpdump/print-ipnet.c",
+  "file": "/home/danielulied/tcpdump/print-ipnet.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-ipoib.c.o -c /home/danielulied/tcpdump/print-ipoib.c",
+  "file": "/home/danielulied/tcpdump/print-ipoib.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-ipx.c.o -c /home/danielulied/tcpdump/print-ipx.c",
+  "file": "/home/danielulied/tcpdump/print-ipx.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-isakmp.c.o -c /home/danielulied/tcpdump/print-isakmp.c",
+  "file": "/home/danielulied/tcpdump/print-isakmp.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-isoclns.c.o -c /home/danielulied/tcpdump/print-isoclns.c",
+  "file": "/home/danielulied/tcpdump/print-isoclns.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-juniper.c.o -c /home/danielulied/tcpdump/print-juniper.c",
+  "file": "/home/danielulied/tcpdump/print-juniper.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-krb.c.o -c /home/danielulied/tcpdump/print-krb.c",
+  "file": "/home/danielulied/tcpdump/print-krb.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-l2tp.c.o -c /home/danielulied/tcpdump/print-l2tp.c",
+  "file": "/home/danielulied/tcpdump/print-l2tp.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-lane.c.o -c /home/danielulied/tcpdump/print-lane.c",
+  "file": "/home/danielulied/tcpdump/print-lane.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-ldp.c.o -c /home/danielulied/tcpdump/print-ldp.c",
+  "file": "/home/danielulied/tcpdump/print-ldp.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-lisp.c.o -c /home/danielulied/tcpdump/print-lisp.c",
+  "file": "/home/danielulied/tcpdump/print-lisp.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-llc.c.o -c /home/danielulied/tcpdump/print-llc.c",
+  "file": "/home/danielulied/tcpdump/print-llc.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-lldp.c.o -c /home/danielulied/tcpdump/print-lldp.c",
+  "file": "/home/danielulied/tcpdump/print-lldp.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-lmp.c.o -c /home/danielulied/tcpdump/print-lmp.c",
+  "file": "/home/danielulied/tcpdump/print-lmp.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-loopback.c.o -c /home/danielulied/tcpdump/print-loopback.c",
+  "file": "/home/danielulied/tcpdump/print-loopback.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-lspping.c.o -c /home/danielulied/tcpdump/print-lspping.c",
+  "file": "/home/danielulied/tcpdump/print-lspping.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-lwapp.c.o -c /home/danielulied/tcpdump/print-lwapp.c",
+  "file": "/home/danielulied/tcpdump/print-lwapp.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-lwres.c.o -c /home/danielulied/tcpdump/print-lwres.c",
+  "file": "/home/danielulied/tcpdump/print-lwres.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-m3ua.c.o -c /home/danielulied/tcpdump/print-m3ua.c",
+  "file": "/home/danielulied/tcpdump/print-m3ua.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-macsec.c.o -c /home/danielulied/tcpdump/print-macsec.c",
+  "file": "/home/danielulied/tcpdump/print-macsec.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-mobile.c.o -c /home/danielulied/tcpdump/print-mobile.c",
+  "file": "/home/danielulied/tcpdump/print-mobile.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-mobility.c.o -c /home/danielulied/tcpdump/print-mobility.c",
+  "file": "/home/danielulied/tcpdump/print-mobility.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-mpcp.c.o -c /home/danielulied/tcpdump/print-mpcp.c",
+  "file": "/home/danielulied/tcpdump/print-mpcp.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-mpls.c.o -c /home/danielulied/tcpdump/print-mpls.c",
+  "file": "/home/danielulied/tcpdump/print-mpls.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-mptcp.c.o -c /home/danielulied/tcpdump/print-mptcp.c",
+  "file": "/home/danielulied/tcpdump/print-mptcp.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-msdp.c.o -c /home/danielulied/tcpdump/print-msdp.c",
+  "file": "/home/danielulied/tcpdump/print-msdp.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-msnlb.c.o -c /home/danielulied/tcpdump/print-msnlb.c",
+  "file": "/home/danielulied/tcpdump/print-msnlb.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-nflog.c.o -c /home/danielulied/tcpdump/print-nflog.c",
+  "file": "/home/danielulied/tcpdump/print-nflog.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-nfs.c.o -c /home/danielulied/tcpdump/print-nfs.c",
+  "file": "/home/danielulied/tcpdump/print-nfs.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-nhrp.c.o -c /home/danielulied/tcpdump/print-nhrp.c",
+  "file": "/home/danielulied/tcpdump/print-nhrp.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-nsh.c.o -c /home/danielulied/tcpdump/print-nsh.c",
+  "file": "/home/danielulied/tcpdump/print-nsh.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-ntp.c.o -c /home/danielulied/tcpdump/print-ntp.c",
+  "file": "/home/danielulied/tcpdump/print-ntp.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-null.c.o -c /home/danielulied/tcpdump/print-null.c",
+  "file": "/home/danielulied/tcpdump/print-null.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-olsr.c.o -c /home/danielulied/tcpdump/print-olsr.c",
+  "file": "/home/danielulied/tcpdump/print-olsr.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-openflow-1.0.c.o -c /home/danielulied/tcpdump/print-openflow-1.0.c",
+  "file": "/home/danielulied/tcpdump/print-openflow-1.0.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-openflow-1.3.c.o -c /home/danielulied/tcpdump/print-openflow-1.3.c",
+  "file": "/home/danielulied/tcpdump/print-openflow-1.3.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-openflow.c.o -c /home/danielulied/tcpdump/print-openflow.c",
+  "file": "/home/danielulied/tcpdump/print-openflow.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-ospf.c.o -c /home/danielulied/tcpdump/print-ospf.c",
+  "file": "/home/danielulied/tcpdump/print-ospf.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-ospf6.c.o -c /home/danielulied/tcpdump/print-ospf6.c",
+  "file": "/home/danielulied/tcpdump/print-ospf6.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-pflog.c.o -c /home/danielulied/tcpdump/print-pflog.c",
+  "file": "/home/danielulied/tcpdump/print-pflog.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-pgm.c.o -c /home/danielulied/tcpdump/print-pgm.c",
+  "file": "/home/danielulied/tcpdump/print-pgm.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-pim.c.o -c /home/danielulied/tcpdump/print-pim.c",
+  "file": "/home/danielulied/tcpdump/print-pim.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-pktap.c.o -c /home/danielulied/tcpdump/print-pktap.c",
+  "file": "/home/danielulied/tcpdump/print-pktap.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-ppi.c.o -c /home/danielulied/tcpdump/print-ppi.c",
+  "file": "/home/danielulied/tcpdump/print-ppi.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-ppp.c.o -c /home/danielulied/tcpdump/print-ppp.c",
+  "file": "/home/danielulied/tcpdump/print-ppp.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-pppoe.c.o -c /home/danielulied/tcpdump/print-pppoe.c",
+  "file": "/home/danielulied/tcpdump/print-pppoe.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-pptp.c.o -c /home/danielulied/tcpdump/print-pptp.c",
+  "file": "/home/danielulied/tcpdump/print-pptp.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-ptp.c.o -c /home/danielulied/tcpdump/print-ptp.c",
+  "file": "/home/danielulied/tcpdump/print-ptp.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-quic.c.o -c /home/danielulied/tcpdump/print-quic.c",
+  "file": "/home/danielulied/tcpdump/print-quic.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-radius.c.o -c /home/danielulied/tcpdump/print-radius.c",
+  "file": "/home/danielulied/tcpdump/print-radius.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-raw.c.o -c /home/danielulied/tcpdump/print-raw.c",
+  "file": "/home/danielulied/tcpdump/print-raw.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-realtek.c.o -c /home/danielulied/tcpdump/print-realtek.c",
+  "file": "/home/danielulied/tcpdump/print-realtek.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-resp.c.o -c /home/danielulied/tcpdump/print-resp.c",
+  "file": "/home/danielulied/tcpdump/print-resp.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-rip.c.o -c /home/danielulied/tcpdump/print-rip.c",
+  "file": "/home/danielulied/tcpdump/print-rip.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-ripng.c.o -c /home/danielulied/tcpdump/print-ripng.c",
+  "file": "/home/danielulied/tcpdump/print-ripng.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-rpki-rtr.c.o -c /home/danielulied/tcpdump/print-rpki-rtr.c",
+  "file": "/home/danielulied/tcpdump/print-rpki-rtr.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-rsvp.c.o -c /home/danielulied/tcpdump/print-rsvp.c",
+  "file": "/home/danielulied/tcpdump/print-rsvp.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-rt6.c.o -c /home/danielulied/tcpdump/print-rt6.c",
+  "file": "/home/danielulied/tcpdump/print-rt6.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-rtsp.c.o -c /home/danielulied/tcpdump/print-rtsp.c",
+  "file": "/home/danielulied/tcpdump/print-rtsp.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-rx.c.o -c /home/danielulied/tcpdump/print-rx.c",
+  "file": "/home/danielulied/tcpdump/print-rx.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-sctp.c.o -c /home/danielulied/tcpdump/print-sctp.c",
+  "file": "/home/danielulied/tcpdump/print-sctp.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-sflow.c.o -c /home/danielulied/tcpdump/print-sflow.c",
+  "file": "/home/danielulied/tcpdump/print-sflow.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-sip.c.o -c /home/danielulied/tcpdump/print-sip.c",
+  "file": "/home/danielulied/tcpdump/print-sip.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-sl.c.o -c /home/danielulied/tcpdump/print-sl.c",
+  "file": "/home/danielulied/tcpdump/print-sl.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-sll.c.o -c /home/danielulied/tcpdump/print-sll.c",
+  "file": "/home/danielulied/tcpdump/print-sll.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-slow.c.o -c /home/danielulied/tcpdump/print-slow.c",
+  "file": "/home/danielulied/tcpdump/print-slow.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-smtp.c.o -c /home/danielulied/tcpdump/print-smtp.c",
+  "file": "/home/danielulied/tcpdump/print-smtp.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-snmp.c.o -c /home/danielulied/tcpdump/print-snmp.c",
+  "file": "/home/danielulied/tcpdump/print-snmp.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-someip.c.o -c /home/danielulied/tcpdump/print-someip.c",
+  "file": "/home/danielulied/tcpdump/print-someip.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-ssh.c.o -c /home/danielulied/tcpdump/print-ssh.c",
+  "file": "/home/danielulied/tcpdump/print-ssh.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-stp.c.o -c /home/danielulied/tcpdump/print-stp.c",
+  "file": "/home/danielulied/tcpdump/print-stp.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-sunatm.c.o -c /home/danielulied/tcpdump/print-sunatm.c",
+  "file": "/home/danielulied/tcpdump/print-sunatm.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-sunrpc.c.o -c /home/danielulied/tcpdump/print-sunrpc.c",
+  "file": "/home/danielulied/tcpdump/print-sunrpc.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-symantec.c.o -c /home/danielulied/tcpdump/print-symantec.c",
+  "file": "/home/danielulied/tcpdump/print-symantec.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-syslog.c.o -c /home/danielulied/tcpdump/print-syslog.c",
+  "file": "/home/danielulied/tcpdump/print-syslog.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-tcp.c.o -c /home/danielulied/tcpdump/print-tcp.c",
+  "file": "/home/danielulied/tcpdump/print-tcp.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-telnet.c.o -c /home/danielulied/tcpdump/print-telnet.c",
+  "file": "/home/danielulied/tcpdump/print-telnet.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-tftp.c.o -c /home/danielulied/tcpdump/print-tftp.c",
+  "file": "/home/danielulied/tcpdump/print-tftp.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-timed.c.o -c /home/danielulied/tcpdump/print-timed.c",
+  "file": "/home/danielulied/tcpdump/print-timed.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-tipc.c.o -c /home/danielulied/tcpdump/print-tipc.c",
+  "file": "/home/danielulied/tcpdump/print-tipc.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-token.c.o -c /home/danielulied/tcpdump/print-token.c",
+  "file": "/home/danielulied/tcpdump/print-token.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-udld.c.o -c /home/danielulied/tcpdump/print-udld.c",
+  "file": "/home/danielulied/tcpdump/print-udld.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-udp.c.o -c /home/danielulied/tcpdump/print-udp.c",
+  "file": "/home/danielulied/tcpdump/print-udp.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-unsupported.c.o -c /home/danielulied/tcpdump/print-unsupported.c",
+  "file": "/home/danielulied/tcpdump/print-unsupported.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-usb.c.o -c /home/danielulied/tcpdump/print-usb.c",
+  "file": "/home/danielulied/tcpdump/print-usb.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-vjc.c.o -c /home/danielulied/tcpdump/print-vjc.c",
+  "file": "/home/danielulied/tcpdump/print-vjc.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-vqp.c.o -c /home/danielulied/tcpdump/print-vqp.c",
+  "file": "/home/danielulied/tcpdump/print-vqp.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-vrrp.c.o -c /home/danielulied/tcpdump/print-vrrp.c",
+  "file": "/home/danielulied/tcpdump/print-vrrp.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-vsock.c.o -c /home/danielulied/tcpdump/print-vsock.c",
+  "file": "/home/danielulied/tcpdump/print-vsock.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-vtp.c.o -c /home/danielulied/tcpdump/print-vtp.c",
+  "file": "/home/danielulied/tcpdump/print-vtp.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-vxlan-gpe.c.o -c /home/danielulied/tcpdump/print-vxlan-gpe.c",
+  "file": "/home/danielulied/tcpdump/print-vxlan-gpe.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-vxlan.c.o -c /home/danielulied/tcpdump/print-vxlan.c",
+  "file": "/home/danielulied/tcpdump/print-vxlan.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-wb.c.o -c /home/danielulied/tcpdump/print-wb.c",
+  "file": "/home/danielulied/tcpdump/print-wb.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-whois.c.o -c /home/danielulied/tcpdump/print-whois.c",
+  "file": "/home/danielulied/tcpdump/print-whois.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-zep.c.o -c /home/danielulied/tcpdump/print-zep.c",
+  "file": "/home/danielulied/tcpdump/print-zep.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-zephyr.c.o -c /home/danielulied/tcpdump/print-zephyr.c",
+  "file": "/home/danielulied/tcpdump/print-zephyr.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/print-zeromq.c.o -c /home/danielulied/tcpdump/print-zeromq.c",
+  "file": "/home/danielulied/tcpdump/print-zeromq.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/signature.c.o -c /home/danielulied/tcpdump/signature.c",
+  "file": "/home/danielulied/tcpdump/signature.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/strtoaddr.c.o -c /home/danielulied/tcpdump/strtoaddr.c",
+  "file": "/home/danielulied/tcpdump/strtoaddr.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/util-print.c.o -c /home/danielulied/tcpdump/util-print.c",
+  "file": "/home/danielulied/tcpdump/util-print.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/missing/strlcat.c.o -c /home/danielulied/tcpdump/missing/strlcat.c",
+  "file": "/home/danielulied/tcpdump/missing/strlcat.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/netdissect.dir/missing/strlcpy.c.o -c /home/danielulied/tcpdump/missing/strlcpy.c",
+  "file": "/home/danielulied/tcpdump/missing/strlcpy.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/tcpdump.dir/fptype.c.o -c /home/danielulied/tcpdump/fptype.c",
+  "file": "/home/danielulied/tcpdump/fptype.c"
+},
+{
+  "directory": "/home/danielulied/tcpdump/build",
+  "command": "/usr/bin/gcc -I/home/danielulied/tcpdump/build -I/home/danielulied/tcpdump -g  -std=gnu99 -o CMakeFiles/tcpdump.dir/tcpdump.c.o -c /home/danielulied/tcpdump/tcpdump.c",
+  "file": "/home/danielulied/tcpdump/tcpdump.c"
+}
+]
