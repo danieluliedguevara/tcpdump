@@ -304,10 +304,9 @@ const char* st_text_from_bytes(u_int st){
 
 const char* process_gn_addr(netdissect_options *ndo, u_int64_t gn_addr){
 	u_int8_t m = (gn_addr >> (7 + 7 * 8)) & 0x01; // 1 bit
-	u_int8_t st = (gn_addr >> (1 + 7 * 8)) & 0x1F; // 5 bits
+	u_int8_t st = (gn_addr >> (2 + 7 * 8)) & 0x1F; // 5 bits
 	u_int16_t reserved = (gn_addr >> (6 * 8)) & 0x3FF; // 10 bits
 	u_int64_t mib = gn_addr & 0xFFFFFFFFFFFF; // 48 bits
-
 	static char buffer[128];
 	if (ndo->ndo_vflag >= 1){
 		sprintf(buffer, "[m:%u st:%s reserved:%u mib:0x%lx]", m, st_text_from_bytes(st), reserved, mib);
@@ -500,9 +499,11 @@ geonet_print(netdissect_options *ndo, const u_char *bp, u_int length,
 
 	/* Process Optional Extended Header*/
 	process_optional_extended_header(ndo, &bp, &length, header_type, header_subtype);
+	if (common_header_next_header == BTP_A || common_header_next_header == BTP_B) {
+		/* Print Basic Transport Header */
+		process_btp_header_from_bytes(ndo, &bp, &length, common_header_next_header);
+	}
 
-	/* Print Basic Transport Header */
-	process_btp_header_from_bytes(ndo, &bp, &length, common_header_next_header);
 
 	/* Print user data part */
 	if (ndo->ndo_vflag)

@@ -356,6 +356,10 @@ of10_inv_QUEUE_GET_CONFIG_REPLY-vv	of10_inv_QUEUE_GET_CONFIG_REPLY.pcap	of10_inv
 
 # GeoNetworking and CALM FAST tests
 geonet_v0_and_calm_fast	geonet_v0_and_calm_fast.pcap	geonet_v0_and_calm_fast.out	-vv
+geonet_v1  geonet_v1.pcap  geonet_v1.out
+geonet_v1-v  geonet_v1.pcap  geonet_v1-v.out -v
+geonet_v1-vv  geonet_v1.pcap  geonet_v1-vv.out -vv
+geonet_v1-vvv  geonet_v1.pcap  geonet_v1-vvv.out -vvv
 
 # M3UA tests
 m3ua isup.pcap isup.out
