@@ -402,23 +402,6 @@ static void process_long_position_vector_from_bytes(netdissect_options *ndo, con
 	}
 }
 
-// static void process_short_position_vector_from_bytes(netdissect_options *ndo, const u_char *bp){
-// 	u_int gn_addr;
-// 	u_int tst;
-// 	u_int lat;
-// 	u_int lon;
-	
-// 	gn_addr = GET_BE_U_8(bp);
-// 	bp += 8;
-// 	tst = GET_BE_U_4(bp);
-// 	bp += 4;
-// 	lat = GET_BE_U_4(bp);
-// 	bp += 4;
-// 	lon = GET_BE_U_4(bp);
-
-// 	ND_PRINT("GN_ADDR:%u lat:%u, lon:%u; ", gn_addr, lat, lon);
-
-//}
 
 static void process_beacon_header_from_bytes(netdissect_options *ndo, const u_char **bp, u_int *length){
 	process_long_position_vector_from_bytes(ndo, bp, length);
