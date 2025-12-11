@@ -91,7 +91,7 @@ static const struct tok btp_port_values[] = {
 };
 
 
-int is_header_type_implemented(u_int ht){
+static int is_header_type_implemented(u_int ht){
 	for (u_int i = 0; i < IMPLEMENTED_GN_HEADER_TYPES_NUM; i++){
 		if (ht == implemented_gn_header_types[i]){
 			return 1;
@@ -100,7 +100,7 @@ int is_header_type_implemented(u_int ht){
 	return 0;
 }
 
-const char* basic_header_next_header_text_from_bytes(u_int nh){
+static const char* basic_header_next_header_text_from_bytes(u_int nh){
 	switch (nh) {
 		case 0: return "Any";
 		case 1: return "CommonHeader";
@@ -109,7 +109,7 @@ const char* basic_header_next_header_text_from_bytes(u_int nh){
 	}
 }
 
-u_int convert_lt_to_seconds(u_int lt_base, u_int lt_multiplier){
+static u_int convert_lt_to_seconds(u_int lt_base, u_int lt_multiplier){
 	float base_seconds;
 	switch (lt_base) {
 		case 0:                      // 50 milliseconds
@@ -132,7 +132,7 @@ u_int convert_lt_to_seconds(u_int lt_base, u_int lt_multiplier){
 }
 
 
-u_int gn_basic_header_decode_from_bytes(netdissect_options *ndo, const u_char **bp, u_int *length, u_int *next_header){
+static void gn_basic_header_decode_from_bytes(netdissect_options *ndo, const u_char **bp, u_int *length, u_int *next_header){
 	u_int version;
 	u_int reserved;
 	u_int lt_multiplier;
@@ -161,7 +161,7 @@ u_int gn_basic_header_decode_from_bytes(netdissect_options *ndo, const u_char **
 	}
 }
 
-const char* common_header_next_header_text_from_bytes(u_int nh){
+static const char* common_header_next_header_text_from_bytes(u_int nh){
 	switch (nh) {
 		case 0:
 			return "Any";
@@ -176,7 +176,7 @@ const char* common_header_next_header_text_from_bytes(u_int nh){
 	}
 }
 
-const char* header_type_text_from_bytes(u_int ht, u_int hst){
+static const char* header_type_text_from_bytes(u_int ht, u_int hst){
 	switch (ht) {
 		case 0:
 			return "Any";
@@ -229,16 +229,16 @@ const char* header_type_text_from_bytes(u_int ht, u_int hst){
 	}
 }
 
-const char* flags_text_from_bytes(u_int flags){
+static const char* flags_text_from_bytes(u_int flags){
 	switch (flags) {
 		case 0: return "Stationary";
 		case 1: return "Mobile";
+		default: return "Unknown";
 	}
 }
 
-u_int gn_common_header_decode_from_bytes(netdissect_options *ndo, const u_char **bp, u_int *length, u_int *header_type, u_int *header_subtype, u_int *next_header){
+static void gn_common_header_decode_from_bytes(netdissect_options *ndo, const u_char **bp, u_int *length, u_int *header_type, u_int *header_subtype, u_int *next_header){
 	u_int reserved;
-	u_int tc;
 	u_int tc_scf;
 	u_int tc_channel_offload;
 	u_int tc_id;
@@ -283,7 +283,7 @@ u_int gn_common_header_decode_from_bytes(netdissect_options *ndo, const u_char *
 }
 
 
-const char* st_text_from_bytes(u_int st){
+static const char* st_text_from_bytes(u_int st){
 	switch (st){
 	case 1: return "Pedestrian";
 	case 2: return "Cyclist";
@@ -302,7 +302,7 @@ const char* st_text_from_bytes(u_int st){
 }
 
 
-const char* process_gn_addr(netdissect_options *ndo, u_int64_t gn_addr){
+static const char* process_gn_addr(netdissect_options *ndo, u_int64_t gn_addr){
 	u_int8_t m = (gn_addr >> (7 + 7 * 8)) & 0x01; // 1 bit
 	u_int8_t st = (gn_addr >> (2 + 7 * 8)) & 0x1F; // 5 bits
 	u_int16_t reserved = (gn_addr >> (6 * 8)) & 0x3FF; // 10 bits
@@ -318,7 +318,7 @@ const char* process_gn_addr(netdissect_options *ndo, u_int64_t gn_addr){
 
 }
 
-void process_long_position_vector_from_bytes(netdissect_options *ndo, const u_char **bp, u_int *length){
+static void process_long_position_vector_from_bytes(netdissect_options *ndo, const u_char **bp, u_int *length){
 	u_int64_t gn_addr;
 	u_int tst;
 	u_int lat;
@@ -352,30 +352,30 @@ void process_long_position_vector_from_bytes(netdissect_options *ndo, const u_ch
 	}
 }
 
-void process_short_position_vector_from_bytes(netdissect_options *ndo, const u_char *bp){
-	u_int gn_addr;
-	u_int tst;
-	u_int lat;
-	u_int lon;
+// static void process_short_position_vector_from_bytes(netdissect_options *ndo, const u_char *bp){
+// 	u_int gn_addr;
+// 	u_int tst;
+// 	u_int lat;
+// 	u_int lon;
 	
-	gn_addr = GET_BE_U_8(bp);
-	bp += 8;
-	tst = GET_BE_U_4(bp);
-	bp += 4;
-	lat = GET_BE_U_4(bp);
-	bp += 4;
-	lon = GET_BE_U_4(bp);
+// 	gn_addr = GET_BE_U_8(bp);
+// 	bp += 8;
+// 	tst = GET_BE_U_4(bp);
+// 	bp += 4;
+// 	lat = GET_BE_U_4(bp);
+// 	bp += 4;
+// 	lon = GET_BE_U_4(bp);
 
-	ND_PRINT("GN_ADDR:%u lat:%u, lon:%u; ", gn_addr, lat, lon);
+// 	ND_PRINT("GN_ADDR:%u lat:%u, lon:%u; ", gn_addr, lat, lon);
 
-}
+//}
 
-void process_beacon_header_from_bytes(netdissect_options *ndo, const u_char **bp, u_int *length){
+static void process_beacon_header_from_bytes(netdissect_options *ndo, const u_char **bp, u_int *length){
 	process_long_position_vector_from_bytes(ndo, bp, length);
 }
 
 
-void process_tsb_shb_header_from_bytes(netdissect_options *ndo, const u_char **bp, u_int *length){
+static void process_tsb_shb_header_from_bytes(netdissect_options *ndo, const u_char **bp, u_int *length){
 
 	process_long_position_vector_from_bytes(ndo, bp, length);
 	u_int media_indpendenet_data = GET_BE_U_4(*bp);
@@ -386,7 +386,7 @@ void process_tsb_shb_header_from_bytes(netdissect_options *ndo, const u_char **b
 	}
 }
 
-void process_tsb_header_from_bytes(netdissect_options *ndo, const u_char **bp, u_int *length){
+static void process_tsb_header_from_bytes(netdissect_options *ndo, const u_char **bp, u_int *length){
 	u_int sn;
 	u_int reseved;
 	sn = GET_BE_U_2(bp);
@@ -402,7 +402,7 @@ void process_tsb_header_from_bytes(netdissect_options *ndo, const u_char **bp, u
 }
 
 
-void process_optional_extended_header(netdissect_options *ndo, const u_char **bp, u_int *length, u_int header_type, u_int header_subtype){
+static void process_optional_extended_header(netdissect_options *ndo, const u_char **bp, u_int *length, u_int header_type, u_int header_subtype){
 	switch (header_type){
 		case HT_BEACON:
 			process_beacon_header_from_bytes(ndo, bp, length);
@@ -427,7 +427,7 @@ void process_optional_extended_header(netdissect_options *ndo, const u_char **bp
 	}
 }
 
-void process_btp_header_from_bytes(netdissect_options *ndo, const u_char **bp, u_int *length, u_int common_header_next_header){
+static void process_btp_header_from_bytes(netdissect_options *ndo, const u_char **bp, u_int *length, u_int common_header_next_header){
 	u_int dst_port;
 	u_int src_port;
 	u_int dst_port_info;
@@ -462,15 +462,8 @@ void process_btp_header_from_bytes(netdissect_options *ndo, const u_char **bp, u
 }
 
 void
-geonet_print(netdissect_options *ndo, const u_char *bp, u_int length,
-	     const struct lladdr_info *src)
+geonet_print(netdissect_options *ndo, const u_char *bp, u_int length)
 {
-	u_int version;
-	u_int next_hdr;
-	u_int hdr_type;
-	u_int hdr_subtype;
-	uint16_t payload_length;
-	u_int hop_limit;
 	ndo->ndo_protocol = "geonet";
 	ND_PRINT("GeoNet ");
 
