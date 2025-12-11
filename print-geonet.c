@@ -51,6 +51,10 @@
 #define HT_TSB 5
 #define HT_TSB_SHB 0
 #define HT_TSB_MULTI_HOP 1
+#define ELAPSED_SECONDS 5
+
+#define ITS_EPOCH_MS 1072915200000  // in milliseconds (01-Jan-2004 00:00:00 UTC)
+#define CYCLE_SIZE ((uint64_t)1 << 32)
 
 #define IMPLEMENTED_GN_HEADER_TYPES_NUM 2
 const u_int implemented_gn_header_types[IMPLEMENTED_GN_HEADER_TYPES_NUM] = {
@@ -318,6 +322,51 @@ static const char* process_gn_addr(netdissect_options *ndo, u_int64_t gn_addr){
 
 }
 
+
+static const char* process_tst(uint32_t tst) {
+    static char buffer[32];
+
+    // Get current UTC time in milliseconds
+    struct timespec now;
+    clock_gettime(CLOCK_REALTIME, &now);
+    uint64_t ref_utc_ms = (uint64_t)now.tv_sec * 1000 + now.tv_nsec / 1000000;
+
+    // Compute number of cycles
+    uint64_t adjusted_timestamp = ref_utc_ms - ITS_EPOCH_MS;
+    uint64_t number_of_cycles = adjusted_timestamp / CYCLE_SIZE;
+	printf("Adjusted timestamp: %lu, Number of cycles: %lu\n", adjusted_timestamp, number_of_cycles);
+
+    // Compute transformed timestamp
+    uint64_t transformed_timestamp = tst + CYCLE_SIZE * number_of_cycles + ITS_EPOCH_MS;
+
+    // Correct if transformed_timestamp is in the future
+    if (transformed_timestamp > ref_utc_ms) {
+        transformed_timestamp = tst + CYCLE_SIZE * (number_of_cycles - 1) + ITS_EPOCH_MS;
+    }
+
+    // Split into seconds and milliseconds
+    time_t abs_time = transformed_timestamp / 1000;
+    uint32_t milliseconds = transformed_timestamp % 1000;
+
+    // Convert to UTC
+    struct tm *timeinfo = gmtime(&abs_time);
+    if (!timeinfo) {
+        snprintf(buffer, sizeof(buffer), "Invalid time");
+        return buffer;
+    }
+
+    snprintf(buffer, sizeof(buffer), "%04d-%02d-%02d %02d:%02d:%02d.%03u UTC",
+             timeinfo->tm_year + 1900,
+             timeinfo->tm_mon + 1,
+             timeinfo->tm_mday,
+             timeinfo->tm_hour,
+             timeinfo->tm_min,
+             timeinfo->tm_sec,
+             milliseconds);
+
+    return buffer;
+}
+
 static void process_long_position_vector_from_bytes(netdissect_options *ndo, const u_char **bp, u_int *length){
 	u_int64_t gn_addr;
 	u_int tst;
@@ -346,7 +395,8 @@ static void process_long_position_vector_from_bytes(netdissect_options *ndo, con
 	s = (value >> (2 * 8)) / 0x7F;
 	h = value & 0xFF;
 	if (ndo->ndo_vflag > 1) {
-		ND_PRINT("GN_ADDR:%s lat:%u lon:%u pai:%u, s:%u, h:%u; ", process_gn_addr(ndo, gn_addr), lat, lon, pai, s, h);
+		//ND_PRINT("GN_ADDR:%s tst:%u lat:%u lon:%u pai:%u, s:%u, h:%u; ", process_gn_addr(ndo, gn_addr), tst, lat, lon, pai, s, h);
+		ND_PRINT("GN_ADDR:%s tst:%s lat:%u lon:%u pai:%u, s:%u, h:%u; ", process_gn_addr(ndo, gn_addr), process_tst(tst), lat, lon, pai, s, h);
 	}else{
 		ND_PRINT("GN_ADDR:%s lat:%u, lon:%u; ", process_gn_addr(ndo, gn_addr), lat, lon);
 	}
