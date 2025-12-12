@@ -30,18 +30,18 @@
 
 /*
    ETSI EN 302 636-5-1 V2.2.1 (2019-05)
-   Intelligent Transport Systems (ITS); 
-   Vehicular Communications; 
-   GeoNetworking; 
-   Part 5: Transport Protocols; 
+   Intelligent Transport Systems (ITS);
+   Vehicular Communications;
+   GeoNetworking;
+   Part 5: Transport Protocols;
    Sub-part 1: Basic Transport Protocol
 
-   ETSI EN 302 636-4-1 V1.4.1 (2020-01)  
+   ETSI EN 302 636-4-1 V1.4.1 (2020-01)
    Intelligent Transport Systems (ITS);
-   Vehicular Communications; 
-   GeoNetworking; 
-   Part 4: Geographical addressing and forwarding for point-to-point and point-to-multipoint communications; 
-   Sub-part 1: Media-Independent Functionality; 
+   Vehicular Communications;
+   GeoNetworking;
+   Part 4: Geographical addressing and forwarding for point-to-point and point-to-multipoint communications;
+   Sub-part 1: Media-Independent Functionality;
    Release 2
 */
 
@@ -61,7 +61,6 @@ static const u_int implemented_gn_header_types[IMPLEMENTED_GN_HEADER_TYPES_NUM] 
 	HT_BEACON,
 	HT_TSB
 };
-
 
 /* BasicTransportProtocol Definitions*/
 #define BTP_A 1
@@ -313,9 +312,9 @@ static const char* process_gn_addr(netdissect_options *ndo, u_int64_t gn_addr){
 	u_int64_t mib = gn_addr & 0xFFFFFFFFFFFF; // 48 bits
 	static char buffer[128];
 	if (ndo->ndo_vflag >= 1){
-		sprintf(buffer, "[m:%u st:%s reserved:%u mib:0x%lx]", m, st_text_from_bytes(st), reserved, mib);
+		sprintf(buffer, "[m:%u st:%s reserved:%u mib:0x%llx]", m, st_text_from_bytes(st), reserved, mib);
 	}else{
-		sprintf(buffer, "0x%lx", mib);
+		sprintf(buffer, "0x%llx", mib);
 	}
 	
 	return buffer;
