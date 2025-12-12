@@ -312,9 +312,9 @@ static const char* process_gn_addr(netdissect_options *ndo, u_int64_t gn_addr){
 	u_int64_t mib = gn_addr & 0xFFFFFFFFFFFF; // 48 bits
 	static char buffer[128];
 	if (ndo->ndo_vflag >= 1){
-		sprintf(buffer, "[m:%u st:%s reserved:%u mib:0x%llx]", m, st_text_from_bytes(st), reserved, mib);
+		sprintf(buffer, "[m:%u st:%s reserved:%u mib:0x%llx]", m, st_text_from_bytes(st), reserved, (unsigned long long)mib);
 	}else{
-		sprintf(buffer, "0x%llx", mib);
+		sprintf(buffer, "0x%llx", (unsigned long long)mib);
 	}
 	
 	return buffer;
