@@ -334,7 +334,6 @@ static const char* process_tst(uint32_t tst) {
     // Compute number of cycles
     uint64_t adjusted_timestamp = ref_utc_ms - ITS_EPOCH_MS;
     uint64_t number_of_cycles = adjusted_timestamp / CYCLE_SIZE;
-	printf("Adjusted timestamp: %lu, Number of cycles: %lu\n", adjusted_timestamp, number_of_cycles);
 
     // Compute transformed timestamp
     uint64_t transformed_timestamp = tst + CYCLE_SIZE * number_of_cycles + ITS_EPOCH_MS;
