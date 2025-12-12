@@ -347,13 +347,17 @@ static const char *st_text_from_bytes(u_int st)
 	}
 }
 
-
 static const char *process_tst(uint32_t tst)
 {
 	static char buffer[80];
 
 	struct timespec now;
+#if defined(_WIN32)
+	timespec_get(&now, TIME_UTC);
+#else
 	clock_gettime(CLOCK_REALTIME, &now);
+#endif
+
 	uint64_t ref_utc_ms = (uint64_t)now.tv_sec * 1000 + now.tv_nsec / 1000000;
 
 	uint64_t adjusted_timestamp = ref_utc_ms - ITS_EPOCH_MS;
@@ -390,10 +394,10 @@ static const char *process_tst(uint32_t tst)
 
 static const char *process_gn_addr(netdissect_options *ndo, uint64_t gn_addr)
 {
-	uint8_t m = (gn_addr >> (7 + 7 * 8)) & 0x01;	   // 1 bit
-	uint8_t st = (gn_addr >> (2 + 7 * 8)) & 0x1F;	   // 5 bits
+	uint8_t m = (gn_addr >> (7 + 7 * 8)) & 0x01;	  // 1 bit
+	uint8_t st = (gn_addr >> (2 + 7 * 8)) & 0x1F;	  // 5 bits
 	uint16_t reserved = (gn_addr >> (6 * 8)) & 0x3FF; // 10 bits
-	uint64_t mib = gn_addr & 0xFFFFFFFFFFFF;		   // 48 bits
+	uint64_t mib = gn_addr & 0xFFFFFFFFFFFF;		  // 48 bits
 	static char buffer[128];
 	if (ndo->ndo_vflag >= 1)
 	{
@@ -406,7 +410,6 @@ static const char *process_gn_addr(netdissect_options *ndo, uint64_t gn_addr)
 
 	return buffer;
 }
-
 
 static void process_long_position_vector_from_bytes(netdissect_options *ndo, const u_char **bp, u_int *length)
 {
