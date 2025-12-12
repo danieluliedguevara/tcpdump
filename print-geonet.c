@@ -57,7 +57,7 @@
 #define CYCLE_SIZE ((uint64_t)1 << 32)
 
 #define IMPLEMENTED_GN_HEADER_TYPES_NUM 2
-const u_int implemented_gn_header_types[IMPLEMENTED_GN_HEADER_TYPES_NUM] = {
+static const u_int implemented_gn_header_types[IMPLEMENTED_GN_HEADER_TYPES_NUM] = {
 	HT_BEACON,
 	HT_TSB
 };
@@ -324,30 +324,24 @@ static const char* process_gn_addr(netdissect_options *ndo, u_int64_t gn_addr){
 
 
 static const char* process_tst(uint32_t tst) {
-    static char buffer[32];
+    static char buffer[80];
 
-    // Get current UTC time in milliseconds
     struct timespec now;
     clock_gettime(CLOCK_REALTIME, &now);
     uint64_t ref_utc_ms = (uint64_t)now.tv_sec * 1000 + now.tv_nsec / 1000000;
 
-    // Compute number of cycles
     uint64_t adjusted_timestamp = ref_utc_ms - ITS_EPOCH_MS;
     uint64_t number_of_cycles = adjusted_timestamp / CYCLE_SIZE;
 
-    // Compute transformed timestamp
     uint64_t transformed_timestamp = tst + CYCLE_SIZE * number_of_cycles + ITS_EPOCH_MS;
 
-    // Correct if transformed_timestamp is in the future
     if (transformed_timestamp > ref_utc_ms) {
         transformed_timestamp = tst + CYCLE_SIZE * (number_of_cycles - 1) + ITS_EPOCH_MS;
     }
 
-    // Split into seconds and milliseconds
     time_t abs_time = transformed_timestamp / 1000;
     uint32_t milliseconds = transformed_timestamp % 1000;
 
-    // Convert to UTC
     struct tm *timeinfo = gmtime(&abs_time);
     if (!timeinfo) {
         snprintf(buffer, sizeof(buffer), "Invalid time");
