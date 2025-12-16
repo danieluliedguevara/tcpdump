@@ -44,21 +44,112 @@
    Release 2
 */
 
+/*Specific Definitions*/
+#define NDO_V_FLAG_FIRST_DEBUG_LEVEL 1
+#define NDO_V_FLAG_SECOND_DEBUG_LEVEL 2
+#define NDO_V_FLAG_THIRD_DEBUG_LEVEL 3
+
+/*Bit-Wise Definitions*/
+#define ONE_BYTE 8
+#define TWO_BYTES 16
+#define THREE_BYTES 24
+#define FOUR_BYTES 32
+#define FIVE_BYTES 40
+#define SIX_BYTES 48
+#define SEVEN_BYTES 56
+#define EIGHT_BYTES 64
+
+#define ONE_BIT_MASK 0x01
+#define TWO_BITS_MASK 0x03
+#define THREE_BITS_MASK 0x07
+#define FOUR_BITS_MASK 0x0F
+#define FIVE_BITS_MASK 0x1F
+#define SIX_BITS_MASK 0x3F
+#define SEVEN_BITS_MASK 0x7F
+#define EIGHT_BITS_MASK 0xFF
+#define TEN_BITS_MASK 0x3FF
+#define SIXTEEN_BITS_MASK 0xFFFF
+#define FORTY_EIGHT_BITS_MASK 0xFFFFFFFFFFFF
+
 /* GeoNetworking Definitons*/
+
+/* GeoNetworking Basic Header Definitions*/
+#define GN_BASIC_HEADER_MINIMUM_PACKET_LENGTH 4
+
+#define IMPLEMENTED_GN_VERSIONS_NUM 1
+static const u_int implemented_gn_versions[IMPLEMENTED_GN_VERSIONS_NUM] = {1};
+
 #define NH_COMMONHEADER 1
+#define NH_SECUREDPACKET 2
+#define IMPLEMENTED_GN_NEXT_HEADERS_NUM 1
+static const u_int implemented_gn_nh_headers[IMPLEMENTED_GN_NEXT_HEADERS_NUM] = {
+	NH_COMMONHEADER};
+static const struct tok basic_header_next_header_values[] = {
+	{0, "Any"},
+	{NH_COMMONHEADER, "CommonHeader"},
+	{NH_SECUREDPACKET, "SecuredPacket"},
+};
+
 #define HT_BEACON 1
 #define HT_TSB 5
 #define HT_TSB_SHB 0
 #define HT_TSB_MULTI_HOP 1
 #define ELAPSED_SECONDS 5
 
-#define ITS_EPOCH_MS 1072915200000 // in milliseconds (01-Jan-2004 00:00:00 UTC)
-#define CYCLE_SIZE ((uint64_t)1 << 32)
-
 #define IMPLEMENTED_GN_HEADER_TYPES_NUM 2
 static const u_int implemented_gn_header_types[IMPLEMENTED_GN_HEADER_TYPES_NUM] = {
 	HT_BEACON,
 	HT_TSB};
+
+static const struct tok common_header_next_header_values[] = {
+	{0, "Any"},
+	{1, "BTP-A"},
+	{2, "BTP-B"},
+	{3, "IPv6"},
+};
+
+#define HT_HST(ht, hst) (((ht) << 8) | (hst))
+static const struct tok header_type_tok[] = {
+	{HT_HST(0, 0), "Any"},
+
+	{HT_HST(1, 0), "Beacon"},
+
+	{HT_HST(2, 0), "GeoUnicast"},
+
+	{HT_HST(3, 0), "GeoAnycastCircle"},
+	{HT_HST(3, 1), "GeoAnycastRect"},
+	{HT_HST(3, 2), "GeoAnycastElipse"},
+
+	{HT_HST(4, 0), "GeoBroadcastCircle"},
+	{HT_HST(4, 1), "GeoBroadcastRect"},
+	{HT_HST(4, 2), "GeoBroadcastElipse"},
+
+	{HT_HST(5, 0), "TopoScopeBcast-SH"},
+	{HT_HST(5, 1), "TopoScopeBcast-MH"},
+
+	{HT_HST(6, 0), "LocService-Request"},
+	{HT_HST(6, 1), "LocService-Reply"},
+};
+
+static const struct tok flags_text_from_bytes[] = {
+	{0, "Stationary"},
+	{1, "Mobile"},
+};
+
+static const struct tok st_text_from_bytes[] = {
+	{1, "Pedestrian"},
+	{2, "Cyclist"},
+	{3, "Moped"},
+	{4, "Motorcycle"},
+	{5, "Passenger Car"},
+	{6, "Bus"},
+	{7, "Light Truck"},
+	{8, "Heavy Truck"},
+	{9, "Trailer"},
+	{10, "Special Vehicle"},
+	{11, "Tram"},
+	{12, "Road Side Unit"},
+};
 
 /* BasicTransportProtocol Definitions*/
 #define BTP_A 1
@@ -102,21 +193,6 @@ static int is_header_type_implemented(u_int ht)
 	return 0;
 }
 
-static const char *basic_header_next_header_text_from_bytes(u_int nh)
-{
-	switch (nh)
-	{
-	case 0:
-		return "Any";
-	case 1:
-		return "CommonHeader";
-	case 2:
-		return "SecuredPacket";
-	default:
-		return "Unknown";
-	}
-}
-
 static u_int convert_lt_to_seconds(u_int lt_base, u_int lt_multiplier)
 {
 	float base_seconds;
@@ -152,114 +228,31 @@ static void gn_basic_header_decode_from_bytes(netdissect_options *ndo, const u_c
 	uint32_t value = GET_BE_U_4(*bp);
 	*bp += 4;
 	*length -= 4;
-	version = (value >> (4 + 3 * 8)) & 0xF;
-	*next_header = (value >> (0 + 3 * 8)) & 0xF;
-	reserved = (value >> (2 * 8)) & 0xFF;
-	lt_multiplier = (value >> 10) & 0x3F;
-	lt_base = (value >> 8) & 0x03;
-	rhl = value & 0xFF;
+	version = (value >> (4 + THREE_BYTES)) & FOUR_BITS_MASK;
+	if (!memchr(implemented_gn_versions, version, IMPLEMENTED_GN_VERSIONS_NUM))
+	{
+		ND_PRINT(" (Unsupported GeoNetworking Basic Header version %u)", version);
+		*next_header = 0; // Indicates an error.
+		return;
+	}
+	*next_header = (value >> (THREE_BYTES)) & FOUR_BITS_MASK;
+	reserved = (value >> (TWO_BYTES)) & EIGHT_BITS_MASK;
+	lt_multiplier = (value >> (2 + ONE_BYTE)) & SIX_BITS_MASK;
+	lt_base = (value >> ONE_BYTE) & THREE_BITS_MASK;
+	rhl = value & FOUR_BITS_MASK;
 
-	const char *next_header_text = basic_header_next_header_text_from_bytes(*next_header);
+	const char *next_header_text = tok2str(basic_header_next_header_values, "Unknown", *next_header);
 	u_int lt_seconds = convert_lt_to_seconds(lt_base, lt_multiplier);
-	if (ndo->ndo_vflag == 1)
+	if (ndo->ndo_vflag == NDO_V_FLAG_FIRST_DEBUG_LEVEL)
 	{
 		ND_PRINT("ver:%u nh:%s lt:%us rhl:%u; ",
 				 version, next_header_text, lt_seconds, rhl);
 	}
-	else if (ndo->ndo_vflag > 1)
+	else if (ndo->ndo_vflag > NDO_V_FLAG_FIRST_DEBUG_LEVEL)
 	{
 		ND_PRINT("ver:%u nh:%s reserved:%u lt:[base:%u mult:%u = %us] rhl:%u; ",
 				 version, next_header_text, reserved,
 				 lt_base, lt_multiplier, lt_seconds, rhl);
-	}
-}
-
-static const char *common_header_next_header_text_from_bytes(u_int nh)
-{
-	switch (nh)
-	{
-	case 0:
-		return "Any";
-	case 1:
-		return "BTP-A";
-	case 2:
-		return "BTP-B";
-	case 3:
-		return "IPv6";
-	default:
-		return "Unknown";
-	}
-}
-
-static const char *header_type_text_from_bytes(u_int ht, u_int hst)
-{
-	switch (ht)
-	{
-	case 0:
-		return "Any";
-	case 1:
-		return "Beacon";
-	case 2:
-		return "GeoUnicast";
-	case 3:
-		switch (hst)
-		{
-		case 0:
-			return "GeoAnycastCircle";
-		case 1:
-			return "GeoAnycastRect";
-		case 2:
-			return "GeoAnycastElipse";
-		default:
-			return "Unknown";
-		}
-	case 4:
-		switch (hst)
-		{
-		case 0:
-			return "GeoBroadcastCircle";
-		case 1:
-			return "GeoBroadcastRect";
-		case 2:
-			return "GeoBroadcastElipse";
-		default:
-			return "Unknown";
-		}
-	case 5:
-		switch (hst)
-		{
-		case 0:
-			return "TopoScopeBcast-SH";
-		case 1:
-			return "TopoScopeBcast-MH";
-		default:
-			return "Unknown";
-		}
-	case 6:
-		switch (hst)
-		{
-		case 0:
-			return "LocService-Request";
-		case 1:
-			return "LocService-Reply";
-		default:
-			return "Unknown";
-		}
-	default:
-		return "Unknown";
-	}
-}
-
-static const char *flags_text_from_bytes(u_int flags)
-{
-	switch (flags)
-	{
-	case 0:
-		return "Stationary";
-	case 1:
-		return "Mobile";
-	default:
-		return "Unknown";
 	}
 }
 
@@ -277,24 +270,24 @@ static void gn_common_header_decode_from_bytes(netdissect_options *ndo, const u_
 	uint64_t value = GET_BE_U_8(*bp);
 	*bp += 8;
 	*length -= 8;
-	*next_header = (value >> (4 + 7 * 8)) & 0x3;
-	reserved = (value >> 7 * 8) & 0xF;
-	*header_type = (value >> (4 + 6 * 8)) & 0xF;
-	*header_subtype = (value >> 6 * 8) & 0xF;
+	*next_header = (value >> (4 + SEVEN_BYTES)) & THREE_BITS_MASK;
+	reserved = (value >> SEVEN_BYTES) & FOUR_BITS_MASK;
+	*header_type = (value >> (4 + SIX_BYTES)) & FOUR_BITS_MASK;
+	*header_subtype = (value >> SIX_BYTES) & FOUR_BITS_MASK;
 
-	uint8_t tc_encoded = (value >> 5 * 8) & 0xFF;
-	tc_scf = (tc_encoded >> 7) & 0x01;
-	tc_channel_offload = (tc_encoded >> 6) & 0x01;
-	tc_id = tc_encoded & 0x3F;
+	uint8_t tc_encoded = (value >> FIVE_BYTES) & EIGHT_BITS_MASK;
+	tc_scf = (tc_encoded >> 7) & ONE_BIT_MASK;
+	tc_channel_offload = (tc_encoded >> 6) & ONE_BIT_MASK;
+	tc_id = tc_encoded & SIX_BITS_MASK;
 
-	flags = (value >> 4 * 8) & 0xFF;
-	pl = (value >> 2 * 8) & 0xFFFF;
-	mhl = (value >> 8) & 0xFF;
-	reserved2 = value & 0xFF;
+	flags = (value >> FOUR_BYTES) & EIGHT_BITS_MASK;
+	pl = (value >> TWO_BYTES) & SIXTEEN_BITS_MASK;
+	mhl = (value >> ONE_BYTE) & EIGHT_BITS_MASK;
+	reserved2 = value & EIGHT_BITS_MASK;
 
-	const char *next_header_text = common_header_next_header_text_from_bytes(*next_header);
-	const char *header_type_text = header_type_text_from_bytes(*header_type, *header_subtype);
-	const char *flags_text = flags_text_from_bytes(flags);
+	const char *next_header_text = tok2str(common_header_next_header_values, "Unknown", *next_header);
+	const char *header_type_text = tok2str(header_type_tok, "Unknown", HT_HST(*header_type, *header_subtype));
+	const char *flags_text = tok2str(flags_text_from_bytes, "Unknown", flags);
 	if (ndo->ndo_vflag == 1)
 	{
 		ND_PRINT("nh:%s ht:%s f:%s pl:%u mhl:%u; ",
@@ -314,94 +307,16 @@ static void gn_common_header_decode_from_bytes(netdissect_options *ndo, const u_
 	}
 }
 
-static const char *st_text_from_bytes(u_int st)
-{
-	switch (st)
-	{
-	case 1:
-		return "Pedestrian";
-	case 2:
-		return "Cyclist";
-	case 3:
-		return "Moped";
-	case 4:
-		return "Motorcycle";
-	case 5:
-		return "Passenger Car";
-	case 6:
-		return "Bus";
-	case 7:
-		return "Light Truck";
-	case 8:
-		return "Heavy Truck";
-	case 9:
-		return "Trailer";
-	case 10:
-		return "Special Vehicle";
-	case 11:
-		return "Tram";
-	case 12:
-		return "Road Side Unit";
-	default:
-		return "Unknown";
-	}
-}
-
-static const char *process_tst(uint32_t tst)
-{
-	static char buffer[80];
-
-	struct timespec now;
-#if defined(_WIN32)
-	timespec_get(&now, TIME_UTC);
-#else
-	clock_gettime(CLOCK_REALTIME, &now);
-#endif
-
-	uint64_t ref_utc_ms = (uint64_t)now.tv_sec * 1000 + now.tv_nsec / 1000000;
-
-	uint64_t adjusted_timestamp = ref_utc_ms - ITS_EPOCH_MS;
-	uint64_t number_of_cycles = adjusted_timestamp / CYCLE_SIZE;
-
-	uint64_t transformed_timestamp = tst + CYCLE_SIZE * number_of_cycles + ITS_EPOCH_MS;
-
-	if (transformed_timestamp > ref_utc_ms)
-	{
-		transformed_timestamp = tst + CYCLE_SIZE * (number_of_cycles - 1) + ITS_EPOCH_MS;
-	}
-
-	time_t abs_time = transformed_timestamp / 1000;
-	uint32_t milliseconds = transformed_timestamp % 1000;
-
-	struct tm *timeinfo = gmtime(&abs_time);
-	if (!timeinfo)
-	{
-		snprintf(buffer, sizeof(buffer), "Invalid time");
-		return buffer;
-	}
-
-	snprintf(buffer, sizeof(buffer), "%04d-%02d-%02d %02d:%02d:%02d.%03u UTC",
-			 timeinfo->tm_year + 1900,
-			 timeinfo->tm_mon + 1,
-			 timeinfo->tm_mday,
-			 timeinfo->tm_hour,
-			 timeinfo->tm_min,
-			 timeinfo->tm_sec,
-			 milliseconds);
-
-	return buffer;
-}
-
 static const char *process_gn_addr(netdissect_options *ndo, uint64_t gn_addr)
 {
-	uint8_t m = (gn_addr >> (7 + 7 * 8)) & 0x01;	  // 1 bit
-	uint8_t st = (gn_addr >> (2 + 7 * 8)) & 0x1F;	  // 5 bits
-	uint16_t reserved = (gn_addr >> (6 * 8)) & 0x3FF; // 10 bits
-	uint64_t mib = gn_addr & 0xFFFFFFFFFFFF;		  // 48 bits
+	uint8_t m = (gn_addr >> (7 + SEVEN_BYTES)) & ONE_BIT_MASK;
+	uint8_t st = (gn_addr >> (2 + SEVEN_BYTES)) & FIVE_BITS_MASK;
+	uint16_t reserved = (gn_addr >> SIX_BYTES) & TEN_BITS_MASK; // 10 bits
+	uint64_t mib = gn_addr & FORTY_EIGHT_BITS_MASK;				// 48 bits
 	static char buffer[128];
-	if (ndo->ndo_vflag >= 1)
+	if (ndo->ndo_vflag >= NDO_V_FLAG_FIRST_DEBUG_LEVEL)
 	{
-		sprintf(buffer, "[m:%u st:%s reserved:%u mib:0x%llx]", m, st_text_from_bytes(st), reserved, (unsigned long long)mib);
+		sprintf(buffer, "[m:%u st:%s reserved:%u mib:0x%llx]", m, tok2str(st_text_from_bytes, "Unknown", st), reserved, (unsigned long long)mib);
 	}
 	else
 	{
@@ -436,12 +351,12 @@ static void process_long_position_vector_from_bytes(netdissect_options *ndo, con
 	uint32_t value = GET_BE_U_4(*bp);
 	*bp += 4;
 	*length -= 4;
-	pai = (value >> (7 + 3 * 8)) & 0x01;
-	s = (value >> (2 * 8)) / 0x7F;
-	h = value & 0xFF;
-	if (ndo->ndo_vflag > 1)
+	pai = (value >> (7 + THREE_BYTES)) & ONE_BIT_MASK;
+	s = (value >> TWO_BYTES) / SEVEN_BITS_MASK;
+	h = value & EIGHT_BITS_MASK;
+	if (ndo->ndo_vflag > NDO_V_FLAG_FIRST_DEBUG_LEVEL)
 	{
-		ND_PRINT("GN_ADDR:%s tst:%s lat:%u lon:%u pai:%u, s:%u, h:%u; ", process_gn_addr(ndo, gn_addr), process_tst(tst), lat, lon, pai, s, h);
+		ND_PRINT("GN_ADDR:%s tst:%u lat:%u lon:%u pai:%u, s:%u, h:%u; ", process_gn_addr(ndo, gn_addr), tst, lat, lon, pai, s, h);
 	}
 	else
 	{
@@ -461,7 +376,7 @@ static void process_tsb_shb_header_from_bytes(netdissect_options *ndo, const u_c
 	u_int media_indpendenet_data = GET_BE_U_4(*bp);
 	*bp += 4;
 	*length -= 4;
-	if (ndo->ndo_vflag > 2)
+	if (ndo->ndo_vflag > NDO_V_FLAG_SECOND_DEBUG_LEVEL)
 	{
 		ND_PRINT("Media-Independent Data: %u; ", media_indpendenet_data);
 	}
@@ -555,18 +470,18 @@ void geonet_print(netdissect_options *ndo, const u_char *bp, u_int length)
 	ndo->ndo_protocol = "geonet";
 	ND_PRINT("GeoNet ");
 
-	if (length < 4)
+	if (length < GN_BASIC_HEADER_MINIMUM_PACKET_LENGTH)
 	{
-		ND_PRINT(" (length %u < 4)", length);
+		ND_PRINT(" (length %u < %u)", length, GN_BASIC_HEADER_MINIMUM_PACKET_LENGTH);
 		goto invalid;
 	}
 
 	/* Process Basic Header */
 	u_int basic_header_next_header;
 	gn_basic_header_decode_from_bytes(ndo, &bp, &length, &basic_header_next_header);
-	if (basic_header_next_header != NH_COMMONHEADER)
+	if (!memchr(implemented_gn_nh_headers, basic_header_next_header, IMPLEMENTED_GN_NEXT_HEADERS_NUM))
 	{
-		ND_PRINT(" (Next-Header != CommonHeader)");
+		ND_PRINT(" (Next-Header not supported: %s)", tok2str(basic_header_next_header_values, "Unknown", basic_header_next_header));
 		goto invalid;
 	}
 
@@ -577,7 +492,7 @@ void geonet_print(netdissect_options *ndo, const u_char *bp, u_int length)
 	gn_common_header_decode_from_bytes(ndo, &bp, &length, &header_type, &header_subtype, &common_header_next_header);
 	if (!is_header_type_implemented(header_type))
 	{
-		ND_PRINT(" (GeoNetworking Header-Type %s not supported)", header_type_text_from_bytes(header_type, header_subtype));
+		ND_PRINT(" (GeoNetworking Header-Type %s not supported)", tok2str(header_type_tok, "Unknown", HT_HST(header_type, header_subtype)));
 		goto invalid;
 	}
 
@@ -596,5 +511,4 @@ void geonet_print(netdissect_options *ndo, const u_char *bp, u_int length)
 
 invalid:
 	nd_print_invalid(ndo);
-	/* XXX - print the remaining data as hex? */
 }
