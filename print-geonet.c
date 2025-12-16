@@ -181,17 +181,17 @@ static const struct tok btp_port_values[] = {
 	{2024, "P2P_FULL_CTLM"},
 	{0, NULL}};
 
-static int is_header_type_implemented(u_int ht)
-{
-	for (u_int i = 0; i < IMPLEMENTED_GN_HEADER_TYPES_NUM; i++)
-	{
-		if (ht == implemented_gn_header_types[i])
-		{
+
+
+static int is_value_in_list(u_int value, const u_int*list, u_int length_of_list){
+	for (u_int i = 0; i < length_of_list; i++){
+		if (value == list[i]){
 			return 1;
 		}
 	}
 	return 0;
 }
+
 
 static u_int convert_lt_to_seconds(u_int lt_base, u_int lt_multiplier)
 {
@@ -229,7 +229,7 @@ static void gn_basic_header_decode_from_bytes(netdissect_options *ndo, const u_c
 	*bp += 4;
 	*length -= 4;
 	version = (value >> (4 + THREE_BYTES)) & FOUR_BITS_MASK;
-	if (!memchr(implemented_gn_versions, version, IMPLEMENTED_GN_VERSIONS_NUM))
+	if (!is_value_in_list(version, implemented_gn_versions, IMPLEMENTED_GN_VERSIONS_NUM))
 	{
 		ND_PRINT(" (Unsupported GeoNetworking Basic Header version %u)", version);
 		*next_header = 0; // Indicates an error.
@@ -479,7 +479,7 @@ void geonet_print(netdissect_options *ndo, const u_char *bp, u_int length)
 	/* Process Basic Header */
 	u_int basic_header_next_header;
 	gn_basic_header_decode_from_bytes(ndo, &bp, &length, &basic_header_next_header);
-	if (!memchr(implemented_gn_nh_headers, basic_header_next_header, IMPLEMENTED_GN_NEXT_HEADERS_NUM))
+	if (!is_value_in_list(basic_header_next_header, implemented_gn_nh_headers, IMPLEMENTED_GN_NEXT_HEADERS_NUM))
 	{
 		ND_PRINT(" (Next-Header not supported: %s)", tok2str(basic_header_next_header_values, "Unknown", basic_header_next_header));
 		goto invalid;
@@ -490,7 +490,7 @@ void geonet_print(netdissect_options *ndo, const u_char *bp, u_int length)
 	u_int header_subtype;
 	u_int common_header_next_header;
 	gn_common_header_decode_from_bytes(ndo, &bp, &length, &header_type, &header_subtype, &common_header_next_header);
-	if (!is_header_type_implemented(header_type))
+	if (!is_value_in_list(header_type, implemented_gn_header_types, IMPLEMENTED_GN_HEADER_TYPES_NUM))
 	{
 		ND_PRINT(" (GeoNetworking Header-Type %s not supported)", tok2str(header_type_tok, "Unknown", HT_HST(header_type, header_subtype)));
 		goto invalid;
