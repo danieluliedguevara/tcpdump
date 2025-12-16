@@ -450,7 +450,7 @@ static void process_btp_header_from_bytes(netdissect_options *ndo, const u_char 
 		dst_port_info = GET_BE_U_2(*bp);
 		*bp += 2;
 		*length -= 2;
-		if (ndo->ndo_vflag > 2)
+		if (ndo->ndo_vflag > NDO_V_FLAG_SECOND_DEBUG_LEVEL)
 		{
 			ND_PRINT("BTP-B dst:%s dpi:%u; ", tok2str(btp_port_values, "Unknown", dst_port), dst_port_info);
 		}
